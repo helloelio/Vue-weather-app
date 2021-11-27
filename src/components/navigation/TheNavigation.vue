@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss">
 .header {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 .navigation {
   display: flex;

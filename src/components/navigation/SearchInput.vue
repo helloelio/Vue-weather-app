@@ -16,8 +16,6 @@
 
 <script>
 
-// <div className='error-msg' v-if='this.$store.state.errorFetch'>Please enter right city name</div>
-
 export default {
   name: 'SearchInput',
 
@@ -30,6 +28,7 @@ export default {
   methods: {
     getWeather() {
       this.$store.commit('setInputValue', this.searchValue);
+      this.searchValue = '';
     },
   },
 };
