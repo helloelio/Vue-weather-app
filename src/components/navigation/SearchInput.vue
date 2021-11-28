@@ -1,21 +1,21 @@
 <template>
-  <div class='navigation__search-box'>
+  <div class="navigation__search-box">
     <input
-      class='search-box__input'
-      type='text'
-      placeholder='Write...'
-      v-model='searchValue'
-      @keypress.enter='getWeather'
+      class="search-box__input"
+      type="text"
+      placeholder="Write..."
+      v-model="searchValue"
+      @keypress.enter="getWeather"
     />
-    <transition name='slide-fade'>
-      <div className='error-msg' v-if='this.$store.state.errorFetch'>Please enter right city name
+    <transition name="slide-fade">
+      <div className="error-msg" v-if="this.$store.state.errorFetch">
+        Please enter right city name
       </div>
     </transition>
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'SearchInput',
 
@@ -32,10 +32,9 @@ export default {
     },
   },
 };
-
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 .search-box {
   &__input {
     font-family: 'M PLUS 1 Code', sans-serif;
@@ -74,12 +73,13 @@ export default {
 }
 
 .slide-fade-enter-active {
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 .slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
 }
-.slide-fade-enter, .slide-fade-leave-to {
+.slide-fade-enter,
+.slide-fade-leave-to {
   transform: translateX(10px);
   opacity: 0;
 }

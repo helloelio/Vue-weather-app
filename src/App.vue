@@ -1,7 +1,7 @@
 <template>
-  <div class='container' :class='getCurrentHour >= 16 ? "night" : "day" '>
-  <the-navigation />
-  <the-main />
+  <div class="container" :class="getCurrentHour >= 16 ? 'night' : 'day'">
+    <the-navigation />
+    <the-main />
   </div>
 </template>
 
@@ -37,13 +37,13 @@ export default {
   margin: 0;
   padding: 0;
 }
-.container{
+.container {
   background-size: cover;
   min-height: 100vh;
-  &.day{
+  &.day {
     background-image: url('./assets/after_noon.webp');
   }
-  &.night{
+  &.night {
     background-image: url('./assets/night.webp');
   }
 }
