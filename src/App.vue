@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :class="getCurrentHour >= 16 ? 'night' : 'day'">
+  <div class="container" :class="getCurrentHour >= 16 || getCurrentHour <= 8 ? 'night' : 'day'">
     <the-navigation />
     <the-main />
   </div>
