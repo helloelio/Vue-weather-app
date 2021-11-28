@@ -1,7 +1,8 @@
 <template>
   <div class="container" :class="getCurrentHour >= 16 || getCurrentHour <= 8 ? 'night' : 'day'">
-    <the-navigation />
+    <the-navigation @handleMenu="handleMenu" />
     <the-main />
+    <div class="burger-menu" v-if="menuStatus" :class="menuStatus ? 'active' : ''"></div>
   </div>
 </template>
 
@@ -15,9 +16,23 @@ export default {
     TheNavigation,
     TheMain,
   },
+
+  data() {
+    return {
+      menuStatus: false,
+    };
+  },
+
   computed: {
     getCurrentHour() {
       return new Date().getHours();
+    },
+  },
+
+  methods: {
+    handleMenu() {
+      this.menuStatus = !this.menuStatus;
+      console.log(this.menuStatus);
     },
   },
 };

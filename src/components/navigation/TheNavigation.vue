@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="navigation">
-      <burger-menu />
+      <burger-menu @click="this.$emit('handleMenu')" />
       <search-input />
     </div>
   </header>
