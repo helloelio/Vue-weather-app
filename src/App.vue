@@ -32,7 +32,6 @@ export default {
   methods: {
     handleMenu() {
       this.menuStatus = !this.menuStatus;
-      console.log(this.menuStatus);
     },
   },
 };
