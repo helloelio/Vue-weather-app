@@ -9,8 +9,7 @@ export default createStore({
     weather: {},
     searchState: false,
   },
-  methods: {
-  },
+  methods: {},
   mutations: {
     async setInputValue(state, value) {
       state.inputValue = value;
@@ -27,8 +26,6 @@ export default createStore({
         });
     },
   },
-  actions: {
-
-  },
+  actions: {},
   modules: {},
 });

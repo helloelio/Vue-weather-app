@@ -1,8 +1,8 @@
 <template>
-  <div class='navigation__burger'>
-    <button class='burger-button' @click='handleMenu'>///</button>
+  <div class="navigation__burger">
+    <button class="burger-button" @click="handleMenu">///</button>
   </div>
-  <div class='burger-menu' v-if='menuStatus'></div>
+  <div class="burger-menu" v-if="menuStatus"></div>
 </template>
 
 <script>
@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style class='scss'>
+<style class="scss">
 .burger-button {
   position: relative;
   background-color: inherit;
@@ -37,7 +37,7 @@ export default {
   left: 0;
   bottom: 0;
   transition: all 1s ease-out;
-  animation: open-menu .2s;
+  animation: open-menu 0.2s;
   right: 0;
 }
 

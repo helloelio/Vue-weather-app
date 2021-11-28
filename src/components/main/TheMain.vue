@@ -1,18 +1,16 @@
 <template>
   <main class="main">
-    <div class='title' v-if="!weatherStatus">Weather App</div>
+    <div class="title" v-if="!weatherStatus">Weather App</div>
     <div v-else class="weather-box">
       <div class="weather-box__location">
-        <div class="location">
-          {{ weather.name }}, {{ weather.sys.country }}
-        </div>
+        <div class="location">{{ weather.name }}, {{ weather.sys.country }}</div>
         <div class="date">Saturday 27 November 2021</div>
       </div>
       <div class="weather-box__info">
         <div class="temp">
           {{ Math.round(weather.main.temp) }}°C
           <div class="feels">Feels like: {{ Math.round(weather.main.feels_like) }}</div>
-          <img :src="`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`" alt=''>
+          <img :src="`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`" alt="" />
           <div class="weather">{{ weather.weather[0].main }}</div>
           <div class="wind">Wind speed: {{ Math.round(weather.wind.speed) }} m/s</div>
         </div>
@@ -22,7 +20,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'TheMain',
   computed: {
@@ -37,11 +34,11 @@ export default {
 </script>
 
 <style lang="scss">
-.title{
+.title {
   color: white;
   font-size: 80px;
   font-weight: 300;
-  text-shadow: 1px 2px rgba(0,0,0, 0.5);
+  text-shadow: 1px 2px rgba(0, 0, 0, 0.5);
   filter: drop-shadow(1px 2px black);
 }
 .location {
@@ -87,7 +84,7 @@ export default {
   font-weight: 700;
   text-shadow: 3px 6px rgb(50 50 70 / 50%);
 }
-.weather-description{
+.weather-description {
   font-size: 28px;
   text-shadow: 2px 2px rgb(50 50 70 / 50%);
 }
