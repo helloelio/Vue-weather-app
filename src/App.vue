@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :class="getCurrentHour >= 16 || getCurrentHour <= 8 ? 'night' : 'day'">
+  <div class="container" :class="getCurrentTimesOfDay">
     <the-navigation @handleMenu="handleMenu" />
     <the-main />
     <div class="burger-menu" v-if="menuStatus" :class="menuStatus ? 'active' : ''"></div>
@@ -24,8 +24,8 @@ export default {
   },
 
   computed: {
-    getCurrentHour() {
-      return new Date().getHours();
+    getCurrentTimesOfDay() {
+      return new Date().getHours() >= 16 || new Date().getHours() <= 8 ? 'night' : 'day';
     },
   },
 
