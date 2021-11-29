@@ -54,7 +54,7 @@ export default createStore({
               this.commit('setErrorFetch', false);
             }
           });
-      }, 1000);
+      }, 500);
     },
   },
   modules: {},
