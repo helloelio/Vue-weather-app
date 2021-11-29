@@ -5,10 +5,10 @@
       type="text"
       placeholder="Write..."
       v-model="searchValue"
-      @keypress.enter="getWeather"
+      @keypress.enter="this.fetchWeather"
     />
     <transition name="slide-fade">
-      <div className="error-msg" v-if="this.$store.state.errorFetch">
+      <div className="error-msg" v-if="errorFetch">
         Please enter right city name
       </div>
     </transition>
@@ -16,6 +16,8 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex';
+
 export default {
   name: 'SearchInput',
 
@@ -24,12 +26,11 @@ export default {
       searchValue: '',
     };
   },
-
+  computed: {
+    ...mapGetters(['errorFetch']),
+  },
   methods: {
-    getWeather() {
-      this.$store.commit('setInputValue', this.searchValue);
-      this.searchValue = '';
-    },
+    ...mapActions(['fetchWeather']),
   },
 };
 </script>

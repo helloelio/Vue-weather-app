@@ -1,6 +1,6 @@
 <template>
   <main class="main">
-    <div class="title" v-if="!weatherStatus">Weather App</div>
+    <div class="title" v-if="!searchState">Weather App</div>
     <div v-else class="weather-box">
       <div class="weather-box__location">
         <div class="location">{{ weather.name }}, {{ weather.sys.country }}</div>
@@ -20,15 +20,12 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'TheMain',
   computed: {
-    weatherStatus() {
-      return this.$store.state.searchState;
-    },
-    weather() {
-      return this.$store.state.weather;
-    },
+    ...mapGetters(['weather', 'searchState']),
   },
 };
 </script>
