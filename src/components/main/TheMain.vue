@@ -1,6 +1,7 @@
 <template>
   <main class="main">
     <div class="title" v-if="!searchState">Weather App</div>
+    <div v-else-if="loading"><Loader /></div>
     <div v-else class="weather-box">
       <div class="weather-box__location">
         <div class="location">{{ weather.name }}, {{ weather.sys.country }}</div>
@@ -21,11 +22,15 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import Loader from './Loader.vue';
 
 export default {
   name: 'TheMain',
+  components: {
+    Loader,
+  },
   computed: {
-    ...mapGetters(['weather', 'searchState']),
+    ...mapGetters(['weather', 'searchState', 'loading']),
   },
 };
 </script>
