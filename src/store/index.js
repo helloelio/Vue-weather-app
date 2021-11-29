@@ -18,12 +18,15 @@ export default createStore({
   mutations: {
     setWeather(state, payload) {
       state.weather = payload;
-      state.searchState = true;
-      state.errorFetch = false;
+    },
+    setSearchState(state, payload) {
+      state.searchState = payload;
+    },
+    setErrorFetch(state, payload) {
+      state.errorFetch = payload;
     },
     setInputState(state, payload) {
       state.inputValue = payload.target.value;
-      this.state.setState = true;
     },
   },
   actions: {
@@ -35,9 +38,11 @@ export default createStore({
         .then((res) => res.json())
         .then(async (result) => {
           if (result.cod === '404') {
-            this.state.errorFetch = true;
+            this.commit('setErrorFetch', true);
           } else {
-            setTimeout(this.commit('setWeather', result), 5000);
+            this.commit('setWeather', result);
+            this.commit('setSearchState', true);
+            this.commit('setErrorFetch', false);
           }
         });
     },
