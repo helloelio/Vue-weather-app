@@ -45,7 +45,7 @@ export default {
   .search-icon {
     position: absolute;
     top: 50%;
-    left: 20px;
+    left: 25px;
     transform: translateY(-50%);
   }
 }
