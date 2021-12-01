@@ -2,7 +2,11 @@
   <div class="container" :class="getCurrentTimesOfDay">
     <the-navigation @handleMenu="handleMenu" />
     <the-main />
-    <div class="burger-menu" v-if="menuStatus" :class="menuStatus ? 'active' : ''"></div>
+    <div
+      class="burger-menu"
+      v-if="menuStatus"
+      :class="menuStatus ? 'active' : ''"
+    ></div>
   </div>
 </template>
 
@@ -26,14 +30,19 @@ export default {
 
   computed: {
     getCurrentTimesOfDay() {
-      return new Date().getHours() >= 16 || new Date().getHours() <= 8 ? 'night' : 'day';
+      return new Date().getHours() >= 16 || new Date().getHours() <= 8
+        ? 'night'
+        : 'day';
     },
     ...mapGetters(['geo']),
   },
 
   mounted() {
     navigator.geolocation.getCurrentPosition(({ coords }) => {
-      this.$store.commit('setGeo', { latitude: coords.latitude, longitude: coords.longitude });
+      this.$store.commit('setGeo', {
+        latitude: coords.latitude,
+        longitude: coords.longitude,
+      });
     });
     if (this.geo) {
       this.$store.dispatch('fetchWatherByGeo');

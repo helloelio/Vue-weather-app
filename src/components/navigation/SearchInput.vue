@@ -8,7 +8,9 @@
       @keypress.enter="fetchWeather"
     />
     <transition name="slide-fade">
-      <div className="error-msg" v-if="errorFetch">Please enter right city name</div>
+      <div className="error-msg" v-if="errorFetch">
+        Please enter right city name
+      </div>
     </transition>
   </div>
 </template>
