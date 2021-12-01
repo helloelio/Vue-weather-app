@@ -77,61 +77,62 @@ export default {
   filter: drop-shadow(1px 2px black);
 }
 
-.location {
-  color: #fff;
-  font-size: 32px;
-  font-weight: 500;
-  text-shadow: 3px 3px rgb(50 50 70 / 50%);
+.weather-box__location {
+  margin-bottom: 20px;
+  .location {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 500;
+    text-shadow: 3px 3px rgb(50 50 70 / 50%);
+  }
+
+  .date {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    text-shadow: 2px 2px rgb(50 50 70 / 50%);
+  }
+  .time {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+  }
 }
 
-.date {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 300;
-  text-shadow: 2px 2px rgb(50 50 70 / 50%);
-}
-.time {
-  font-size: 16px;
-  font-weight: 500;
-}
-.temp {
-  position: relative;
-  display: inline-block;
-  margin: 30px auto;
-  width: 80%;
-  border-radius: 14px;
-  padding: 15px 25px;
-  color: #fff;
-  font-size: 48px;
-  font-weight: 700;
-  text-shadow: 3px 6px rgb(50 50 70 / 50%);
-  box-shadow: 1px 2px rgba(0, 0, 0, 0.5);
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.feels {
-  font-size: 30px;
-  text-shadow: 2px 2px rgb(50 50 70 / 50%);
-}
-.weather-icon {
-  width: 25%;
-}
-.wind {
-  color: #fff;
-  font-size: 30px;
-  font-weight: 500;
-  text-shadow: 1px 3px rgb(50 50 70 / 50%);
-}
-
-.weather {
-  color: #fff;
-  font-size: 35px;
-  font-weight: 700;
-  text-shadow: 3px 6px rgb(50 50 70 / 50%);
-}
-
-.weather-description {
-  font-size: 28px;
-  text-shadow: 2px 2px rgb(50 50 70 / 50%);
+.weather-box__info {
+  display: flex;
+  justify-content: center;
+  .temp {
+    position: relative;
+    display: inline-block;
+    border-radius: 14px;
+    padding: 20px;
+    width: 72%;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 700;
+    text-shadow: 3px 6px rgb(50 50 70 / 50%);
+    box-shadow: 1px 2px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
+    .feels {
+      font-size: 25px;
+      text-shadow: 2px 2px rgb(50 50 70 / 50%);
+    }
+    .weather-icon {
+      width: 20%;
+    }
+    .weather {
+      color: #fff;
+      font-size: 30px;
+      font-weight: 700;
+      text-shadow: 3px 6px rgb(50 50 70 / 50%);
+    }
+    .wind {
+      color: #fff;
+      font-size: 25px;
+      font-weight: 500;
+      text-shadow: 1px 3px rgb(50 50 70 / 50%);
+    }
+  }
 }
 </style>

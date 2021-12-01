@@ -8,8 +8,8 @@
       v-model="searchValue"
       @keypress.enter="fetchWeather"
     />
-    <transition name="slide-fade">
-      <div className="error-msg" v-if="errorFetch">
+    <transition name="slide-fade" class="">
+      <div class="error-msg" v-if="errorFetch">
         Please enter right city name
       </div>
     </transition>
@@ -40,7 +40,6 @@ export default {
 .navigation {
   &__search-box {
     position: relative;
-    margin-bottom: 10px;
   }
   .search-icon {
     position: absolute;
@@ -78,7 +77,7 @@ export default {
 .error-msg {
   position: absolute;
   left: 0;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 500;
   color: red;
   background-color: rgba(255, 255, 255, 0.3);
