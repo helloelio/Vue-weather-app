@@ -9,8 +9,11 @@
       </div>
       <div class="weather-box__info">
         <div class="temp">
-          {{ Math.round(weather.main.temp) }}°C
-          <div class="feels">Feels like: {{ Math.round(weather.main.feels_like) }}</div>
+          {{ Math.round(this.weather.main.temp) }}°C
+          <div class="feels">
+            Feels like:
+            {{ Math.round(this.weather.main.feels_like) }}°C
+          </div>
           <img :src="`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`" alt="" />
           <div class="weather">{{ weather.weather[0].main }}</div>
           <div class="wind">Wind speed: {{ Math.round(weather.wind.speed) }} m/s</div>
