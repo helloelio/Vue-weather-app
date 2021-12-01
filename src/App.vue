@@ -75,10 +75,10 @@ export default {
   background-size: cover;
   min-height: 100vh;
   &.day {
-    background-image: url('./assets/day.jpg');
+    background-image: url('./assets/day.png');
   }
   &.night {
-    background-image: url('./assets/night.jpg');
+    background-image: url('./assets/night.png');
   }
   .burger-menu {
     position: absolute;
