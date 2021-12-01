@@ -74,7 +74,6 @@ export default {
   font-weight: 300;
   text-shadow: 2px 2px rgb(50 50 70 / 50%);
 }
-
 .temp {
   position: relative;
   display: inline-block;
