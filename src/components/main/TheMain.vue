@@ -62,18 +62,21 @@ export default {
   text-shadow: 1px 2px rgba(0, 0, 0, 0.5);
   filter: drop-shadow(1px 2px black);
 }
+
 .location {
   color: #fff;
   font-size: 32px;
   font-weight: 500;
   text-shadow: 3px 3px rgb(50 50 70 / 50%);
 }
+
 .date {
   color: #fff;
   font-size: 20px;
   font-weight: 300;
   text-shadow: 2px 2px rgb(50 50 70 / 50%);
 }
+
 .temp {
   position: relative;
   display: inline-block;
@@ -88,22 +91,26 @@ export default {
   box-shadow: 1px 2px rgba(0, 0, 0, 0.5);
   background-color: rgba(255, 255, 255, 0.2);
 }
+
 .feels {
   font-size: 30px;
   text-shadow: 2px 2px rgb(50 50 70 / 50%);
 }
+
 .wind {
   color: #fff;
   font-size: 30px;
   font-weight: 500;
   text-shadow: 1px 3px rgb(50 50 70 / 50%);
 }
+
 .weather {
   color: #fff;
   font-size: 35px;
   font-weight: 700;
   text-shadow: 3px 6px rgb(50 50 70 / 50%);
 }
+
 .weather-description {
   font-size: 28px;
   text-shadow: 2px 2px rgb(50 50 70 / 50%);
