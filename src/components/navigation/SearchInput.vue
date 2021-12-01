@@ -33,7 +33,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .search-box {
   &__input {
     font-family: 'M PLUS 1 Code', sans-serif;

@@ -1,7 +1,9 @@
 <template>
   <main class="main">
     <div class="title" v-if="!searchState">Weather App</div>
-    <div v-else-if="loading"><Loader /></div>
+    <div v-else-if="loading">
+      <the-loader />
+    </div>
     <div v-else class="weather-box">
       <div class="weather-box__location">
         <div class="location">{{ weather.name }}, {{ weather.sys.country }}</div>
@@ -9,14 +11,17 @@
       </div>
       <div class="weather-box__info">
         <div class="temp">
-          {{ Math.round(this.weather.main.temp) }}°C
+          {{ weatherTemp }}°C
           <div class="feels">
             Feels like:
-            {{ Math.round(this.weather.main.feels_like) }}°C
+            {{ weatherTempFeelsLike }}°C
           </div>
-          <img :src="`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`" alt="" />
-          <div class="weather">{{ weather.weather[0].main }}</div>
-          <div class="wind">Wind speed: {{ Math.round(weather.wind.speed) }} m/s</div>
+          <img
+            :src="`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`"
+            alt="weather icon"
+          />
+          <div class="weather">{{ weatherWindSpeed }}</div>
+          <div class="wind">Wind speed: {{ weatherWindSpeed }} m/s</div>
         </div>
       </div>
     </div>
@@ -25,20 +30,31 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import Loader from './Loader.vue';
+import TheLoader from './TheLoader.vue';
 
 export default {
   name: 'TheMain',
+
   components: {
-    Loader,
+    TheLoader,
   },
+
   computed: {
+    weatherTemp() {
+      return Math.round(this.weather.main.temp);
+    },
+    weatherTempFeelsLike() {
+      return Math.round(this.weather.main.feels_like);
+    },
+    weatherWindSpeed() {
+      return Math.round(this.weather.wind.speed);
+    },
     ...mapGetters(['weather', 'searchState', 'loading']),
   },
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .title {
   color: white;
   font-size: 80px;

@@ -9,11 +9,11 @@
 
 <script>
 export default {
-  name: 'Loader',
+  name: 'TheLoader',
 };
 </script>
 
-<style>
+<style scoped>
 .lds-ring {
   display: inline-block;
   position: relative;

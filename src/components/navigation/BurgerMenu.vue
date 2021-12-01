@@ -10,7 +10,7 @@ export default {
 };
 </script>
 
-<style class="scss">
+<style scoped class="scss">
 .burger-button {
   position: relative;
   background-color: inherit;

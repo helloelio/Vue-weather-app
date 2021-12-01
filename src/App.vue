@@ -23,6 +23,14 @@ export default {
       menuStatus: false,
     };
   },
+
+  computed: {
+    getCurrentTimesOfDay() {
+      return new Date().getHours() >= 16 || new Date().getHours() <= 8 ? 'night' : 'day';
+    },
+    ...mapGetters(['geo']),
+  },
+
   mounted() {
     navigator.geolocation.getCurrentPosition(({ coords }) => {
       this.$store.commit('setGeo', { latitude: coords.latitude, longitude: coords.longitude });
@@ -30,12 +38,6 @@ export default {
     if (this.geo) {
       this.$store.dispatch('fetchWatherByGeo');
     }
-  },
-  computed: {
-    getCurrentTimesOfDay() {
-      return new Date().getHours() >= 16 || new Date().getHours() <= 8 ? 'night' : 'day';
-    },
-    ...mapGetters(['geo']),
   },
 
   methods: {
