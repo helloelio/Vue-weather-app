@@ -1,5 +1,6 @@
 <template>
   <div class="navigation__search-box">
+    <img class="search-icon" src="../../assets/search-icon.svg" alt="" />
     <input
       class="search-box__input"
       type="text"
@@ -36,11 +37,23 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.navigation {
+  &__search-box {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+  }
+}
 .search-box {
   &__input {
     font-family: 'M PLUS 1 Code', sans-serif;
     width: 80%;
-    padding: 10px;
+    padding: 10px 0 10px 40px;
     border-radius: 8px;
     border: none;
     outline: none;
@@ -49,7 +62,6 @@ export default {
     color: #000;
     box-shadow: 0 2px 2px 2px rgb(0 0 0 / 20%);
     background-color: hsla(0, 0%, 100%, 0.5);
-    margin-bottom: 10px;
     transition: all 0.2s ease-out;
   }
 
