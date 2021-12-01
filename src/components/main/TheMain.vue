@@ -6,8 +6,15 @@
     </div>
     <div v-else class="weather-box">
       <div class="weather-box__location">
-        <div class="location">{{ weather.name }}, {{ weather.sys.country }}</div>
-        <div class="date">Saturday 27 November 2021</div>
+        <div class="location">
+          {{ weather.name }}, {{ weather.sys.country }}
+        </div>
+        <div class="date">
+          {{ getDate }}
+        </div>
+        <div class="time">
+          {{ getTime }}
+        </div>
       </div>
       <div class="weather-box__info">
         <div class="temp">
@@ -17,10 +24,11 @@
             {{ weatherTempFeelsLike }}°C
           </div>
           <img
+            class="weather-icon"
             :src="`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`"
             alt="weather icon"
           />
-          <div class="weather">{{ weatherWindSpeed }}</div>
+          <div class="weather">{{ weather.weather[0].main }}</div>
           <div class="wind">Wind speed: {{ weatherWindSpeed }} m/s</div>
         </div>
       </div>
@@ -40,6 +48,12 @@ export default {
   },
 
   computed: {
+    getDate() {
+      return `${new Date().getDate()}.${new Date().getMonth()}.${new Date().getFullYear()}`;
+    },
+    getTime() {
+      return `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`;
+    },
     weatherTemp() {
       return Math.round(this.weather.main.temp);
     },
@@ -76,13 +90,16 @@ export default {
   font-weight: 300;
   text-shadow: 2px 2px rgb(50 50 70 / 50%);
 }
-
+.time {
+  font-size: 16px;
+  font-weight: 500;
+}
 .temp {
   position: relative;
   display: inline-block;
   margin: 30px auto;
   width: 80%;
-  border-radius: 8px;
+  border-radius: 14px;
   padding: 15px 25px;
   color: #fff;
   font-size: 48px;
@@ -96,7 +113,9 @@ export default {
   font-size: 30px;
   text-shadow: 2px 2px rgb(50 50 70 / 50%);
 }
-
+.weather-icon {
+  width: 25%;
+}
 .wind {
   color: #fff;
   font-size: 30px;
