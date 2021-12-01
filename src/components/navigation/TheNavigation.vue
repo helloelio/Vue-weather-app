@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="navigation">
-      <burger-menu @click="this.$emit('handleMenu')" />
+      <!-- <burger-menu @click="this.$emit('handleMenu')" /> -->
       <search-input />
     </div>
   </header>
@@ -9,13 +9,13 @@
 
 <script>
 import SearchInput from './SearchInput.vue';
-import BurgerMenu from './BurgerMenu.vue';
+// import BurgerMenu from './BurgerMenu.vue';
 
 export default {
   name: 'TheNavigation',
   components: {
     SearchInput,
-    BurgerMenu,
+    // BurgerMenu,
   },
 };
 </script>
@@ -34,7 +34,7 @@ export default {
     width: 20%;
   }
   &__search-box {
-    width: 80%;
+    width: 90%;
   }
 }
 </style>
