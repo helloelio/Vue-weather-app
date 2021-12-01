@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import TheNavigation from './components/navigation/TheNavigation.vue';
 import TheMain from './components/main/TheMain.vue';
 
@@ -22,11 +23,19 @@ export default {
       menuStatus: false,
     };
   },
-
+  mounted() {
+    navigator.geolocation.getCurrentPosition(({ coords }) => {
+      this.$store.commit('setGeo', { latitude: coords.latitude, longitude: coords.longitude });
+    });
+    if (this.geo) {
+      this.$store.dispatch('fetchWatherByGeo');
+    }
+  },
   computed: {
     getCurrentTimesOfDay() {
       return new Date().getHours() >= 16 || new Date().getHours() <= 8 ? 'night' : 'day';
     },
+    ...mapGetters(['geo']),
   },
 
   methods: {
