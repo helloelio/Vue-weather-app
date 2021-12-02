@@ -34,7 +34,6 @@ export default {
     width: 20%;
   }
   &__search-box {
-    width: 90%;
   }
 }
 </style>

@@ -107,7 +107,6 @@ export default {
     display: inline-block;
     border-radius: 14px;
     padding: 20px;
-    width: 72%;
     color: #fff;
     font-size: 40px;
     font-weight: 700;
