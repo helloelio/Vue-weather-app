@@ -1,12 +1,11 @@
 <template>
   <div class="navigation__search-box">
-    <img class="search-icon" src="../../assets/search-icon.svg" alt="" />
     <input
       class="search-box__input"
       type="text"
-      placeholder="Write..."
       v-model="searchValue"
       @keypress.enter="fetchWeather"
+      @click="log"
     />
     <transition name="slide-fade" class="">
       <div class="error-msg" v-if="errorFetch">
@@ -31,6 +30,9 @@ export default {
     ...mapGetters(['errorFetch']),
   },
   methods: {
+    log() {
+      console.log('a');
+    },
     ...mapActions(['fetchWeather']),
   },
 };
@@ -44,19 +46,20 @@ export default {
   .search-icon {
     position: absolute;
     top: 50%;
-    left: 25px;
-    transform: translateY(-50%);
+    left: 10px;
+    transform: translateY(-15px);
   }
 }
 .search-box {
   &__input {
-    font-family: 'M PLUS 1 Code', sans-serif;
-    width: 80%;
-    padding: 10px 0 10px 40px;
+    background: url('../../assets/search-icon.svg') no-repeat scroll 10px 10px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 0 10px 35px;
+    margin-bottom: 10px;
     border-radius: 8px;
     border: none;
     outline: none;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
     color: #000;
     box-shadow: 0 2px 2px 2px rgb(0 0 0 / 20%);
@@ -69,11 +72,19 @@ export default {
   }
 
   &__input:focus {
+    font-size: 15px;
+    padding: 10px 10px 10px 40px;
     box-shadow: 0 2px 2px 2px rgb(0 0 0 / 50%);
     background-color: hsla(0, 0%, 100%, 0.7);
   }
+  &__input:focus .search-icon {
+    display: inline-block;
+  }
 }
 
+.search-box__input:focus .search-icon {
+  display: inline-block;
+}
 .error-msg {
   position: absolute;
   left: 0;
