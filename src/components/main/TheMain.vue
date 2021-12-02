@@ -81,7 +81,7 @@ export default {
   margin-bottom: 20px;
   .location {
     color: #fff;
-    font-size: 32px;
+    font-size: 27px;
     font-weight: 500;
     text-shadow: 3px 3px rgb(50 50 70 / 50%);
   }

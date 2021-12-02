@@ -37,7 +37,7 @@ export default {
     ...mapGetters(['geo']),
   },
 
-  mounted() {
+  created() {
     navigator.geolocation.getCurrentPosition(({ coords }) => {
       this.$store.commit('setGeo', {
         latitude: coords.latitude,
