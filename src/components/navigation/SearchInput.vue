@@ -5,7 +5,6 @@
       type="text"
       v-model="searchValue"
       @keypress.enter="fetchWeather"
-      @click="log"
     />
     <transition name="slide-fade" class="">
       <div class="error-msg" v-if="errorFetch">
@@ -30,9 +29,6 @@ export default {
     ...mapGetters(['errorFetch']),
   },
   methods: {
-    log() {
-      console.log('a');
-    },
     ...mapActions(['fetchWeather']),
   },
 };
@@ -54,7 +50,7 @@ export default {
   &__input {
     background: url('../../assets/search-icon.svg') no-repeat scroll 10px 10px;
     font-family: 'Montserrat', sans-serif;
-    padding: 10px 0 10px 35px;
+    padding: 10px 0 10px 38px;
     margin-bottom: 10px;
     border-radius: 8px;
     border: none;
